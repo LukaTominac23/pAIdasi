@@ -3,7 +3,8 @@ $conn = new mysqli(
     "localhost",
     "root",
     "",
-    "ai_tutor"
+    "ai_tutor",
+    3307
 );
 
 if ($conn->connect_error) {
@@ -45,19 +46,47 @@ $result = $conn->query($sql);
 
         <?php
         if ($result && $result->num_rows > 0) {
+
             while ($row = $result->fetch_assoc()) {
+
                 echo '<div class="card">';
+
                 echo '<h3>' . htmlspecialchars($row['predmet']) . '</h3>';
-                echo '<p><strong>Datum ispita:</strong> ' . htmlspecialchars($row['datum_ispita']) . '</p>';
-                echo '<p><strong>Težina gradiva:</strong> ' . htmlspecialchars($row['tezina']) . '/5</p>';
-                echo '<p><strong>Željena ocjena:</strong> ' . htmlspecialchars($row['zeljena_ocjena']) . '</p>';
-                echo '<p><strong>Status:</strong> ' . htmlspecialchars($row['status_obaveze']) . '</p>';
+
+                echo '<p><strong>Datum ispita:</strong> '
+                    . htmlspecialchars($row['datum_ispita']) .
+                    '</p>';
+
+                echo '<p><strong>Težina gradiva:</strong> '
+                    . htmlspecialchars($row['tezina']) .
+                    '/5</p>';
+
+                echo '<p><strong>Željena ocjena:</strong> '
+                    . htmlspecialchars($row['zeljena_ocjena']) .
+                    '</p>';
+
+                echo '<p><strong>Status:</strong> '
+                    . htmlspecialchars($row['status_obaveze']) .
+                    '</p>';
+
+                if ($row['status_obaveze'] != 'Odrađeno') {
+
+                    echo '<a class="btn"
+                    href="oznaci_odradeno.php?id='
+                    . $row['id'] .
+                    '">✓ Označi kao odrađeno</a>';
+
+                }
+
                 echo '</div>';
             }
+
         } else {
+
             echo '<div class="card">';
             echo '<p>Trenutno nema unesenih obaveza.</p>';
             echo '</div>';
+
         }
         ?>
 
