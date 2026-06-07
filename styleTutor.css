@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7fb;
+    color: #1f2937;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 230px;
+    background: linear-gradient(180deg, #0d6efd, #0aa9d6);
+    color: white;
+    padding: 25px 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+}
+
+.top {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.top h1 {
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.top p {
+    color: #64748b;
+}
+
+.profile {
+    width: 48px;
+    height: 48px;
+    background: #14b8a6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #334155;
+}
+
+.card h2 {
+    font-size: 36px;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #64748b;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#0d6efd 68%, #e5e7eb 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+}
+
+.circle span {
+    width: 82px;
+    height: 82px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d6efd;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.progress-section,
+.tasks {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.progress-section h2,
+.tasks h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.progress-item {
+    margin-bottom: 18px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.bar {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.math {
+    width: 72%;
+    background: #0d6efd;
+}
+
+.chemistry {
+    width: 65%;
+    background: #22c55e;
+}
+
+.croatian {
+    width: 66%;
+    background: #f59e0b;
+}
+
+.informatics {
+    width: 80%;
+    background: #8b5cf6;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task h3 {
+    margin-bottom: 5px;
+}
+
+.task p {
+    color: #64748b;
+}
+
+.status {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status.progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status.not-started {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.status.done {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* MOBILNA VERZIJA */
+@media (max-width: 768px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+    }
+
+    .sidebar a {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 18px;
+    }
+
+    .top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
