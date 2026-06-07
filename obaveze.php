@@ -3,8 +3,7 @@ $conn = new mysqli(
     "localhost",
     "root",
     "",
-    "ai_tutor",
-    3307
+    "ai_tutor"
 );
 
 if ($conn->connect_error) {
