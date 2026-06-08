@@ -1,3 +1,7 @@
+CREATE DATABASE AITutor_Obaveze;
+
+USE AITutor_Obaveze;
+
 CREATE TABLE Korisnici (
     ID_Korisnika INT          PRIMARY KEY AUTO_INCREMENT,
     Ime          VARCHAR(50)  NOT NULL,
