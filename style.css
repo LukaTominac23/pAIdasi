@@ -113,3 +113,11 @@ body{
     border-radius:8px;
     cursor:pointer;
 }
+
+.form-container button:hover {
+    background: #090933;
+}
+
+.form-container a:hover {
+    color: black;
+}
