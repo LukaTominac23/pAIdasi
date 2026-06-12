@@ -1,4 +1,5 @@
 <?php
+// konekcija
 $conn = new mysqli(
     "localhost",
     "root",
@@ -10,6 +11,7 @@ if ($conn->connect_error) {
     die("Greška pri spajanju na bazu: " . $conn->connect_error);
 }
 
+// dohvat svih obveza
 $sql = "SELECT * FROM obaveze ORDER BY datum_ispita ASC";
 $result = $conn->query($sql);
 ?>
@@ -44,6 +46,7 @@ $result = $conn->query($sql);
     <div class="cards">
 
         <?php
+        // kreiranje kartica
         if ($result && $result->num_rows > 0) {
 
             while ($row = $result->fetch_assoc()) {
