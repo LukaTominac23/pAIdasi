@@ -10,7 +10,7 @@ $conn = new mysqli(
 if ($conn->connect_error) {
     die("Greška pri spajanju na bazu.");
 }
-
+//dohvaćanje id-ja obveze i ažuriranje stanja 
 $id = (int)$_GET['id'];
 
 $sql = "UPDATE obaveze
