@@ -28,14 +28,13 @@ $result = $conn->query($sql);
 <div class="sidebar">
 
     <h2>AI Tutor</h2>
-
-    <a href="main.html" class="menu-btn">🏠 Početna</a>
-
-    <a href="dodaj_obavezu.html" class="menu-btn">➕ Dodaj obavezu</a>
-
-    <a href="obaveze.php" class="menu-btn">📋 Moje obaveze</a>
-
-    <a href="napredak.html" class="menu-btn">📈 Napredak</a>
+    <nav>
+        <a href="main.html" class="menu-btn">Početna</a>
+        <a href="dodaj_obavezu.html" class="menu-btn">Dodaj Obavezu</a>
+        <a href="obaveze.php" class="active">Obaveze</a>
+        <a href="napredak_mobile.html" class="menu-btn">Napredak</a>
+        <a href="notifikacije_demo.html" class="menu-btn">Notifikacije</a>
+    </nav>
 
     <a href="notifikacije_demo.html" class="menu-btn">🔔 Notifikacije</a>
 

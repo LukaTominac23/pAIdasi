@@ -15,16 +15,20 @@ body {
     min-height: 100vh;
 }
 
+
 .sidebar {
     width: 230px;
+    min-height: 100vh;
     background: linear-gradient(180deg, #0d6efd, #0aa9d6);
     color: white;
     padding: 25px 20px;
+    flex-shrink: 0;
 }
 
 .sidebar h2 {
     margin-bottom: 30px;
     font-size: 26px;
+    text-align: center;
 }
 
 .sidebar nav {
@@ -39,6 +43,7 @@ body {
     padding: 12px;
     border-radius: 12px;
     transition: 0.3s;
+    text-align: center;
 }
 
 .sidebar a:hover,
@@ -46,9 +51,11 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
+
 .content {
     flex: 1;
     padding: 30px;
+    min-width: 0;
 }
 
 .top {
@@ -58,6 +65,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     margin-bottom: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
@@ -65,6 +73,7 @@ body {
 .top h1 {
     color: #0f172a;
     margin-bottom: 8px;
+    font-size: 30px;
 }
 
 .top p {
@@ -81,7 +90,9 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    flex-shrink: 0;
 }
+
 
 .cards {
     display: grid;
@@ -112,6 +123,7 @@ body {
     color: #64748b;
 }
 
+
 .circle {
     width: 120px;
     height: 120px;
@@ -135,6 +147,7 @@ body {
     font-size: 24px;
     font-weight: bold;
 }
+
 
 .progress-section,
 .tasks {
@@ -160,6 +173,7 @@ body {
     justify-content: space-between;
     margin-bottom: 8px;
     font-weight: bold;
+    gap: 10px;
 }
 
 .bar {
@@ -200,6 +214,7 @@ body {
     align-items: center;
     border-bottom: 1px solid #e5e7eb;
     padding: 15px 0;
+    gap: 15px;
 }
 
 .task:last-child {
@@ -219,6 +234,7 @@ body {
     border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .status.progress {
@@ -236,32 +252,54 @@ body {
     color: #15803d;
 }
 
-/* MOBILNA VERZIJA */
-@media (max-width: 768px) {
 
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
     .app {
         flex-direction: column;
     }
 
     .sidebar {
         width: 100%;
-        padding: 18px;
+        min-height: auto;
+        padding: 16px;
     }
 
     .sidebar h2 {
-        text-align: center;
-        margin-bottom: 15px;
+        margin-bottom: 14px;
+        font-size: 24px;
     }
 
-    .sidebar nav {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 8px;
+    .sidebar nav,
+    .sidebar{
+        overflow-x:auto;
     }
 
-    .sidebar a {
-        white-space: nowrap;
-        font-size: 14px;
+    .sidebar nav{
+        display:flex;
+        flex-direction:row;
+        gap:12px;
+        justify-content:flex-start;
+    }
+
+    .menu-btn,
+    .sidebar nav a{
+        display:block;
+        white-space:nowrap;
+        text-decoration:none;
+        color:white;
+        padding:10px 16px;
+        border-radius:14px;
+        background:transparent;
+        font-size:16px;
+        margin:0;
+        flex-shrink:0;
     }
 
     .content {
@@ -271,16 +309,62 @@ body {
     .top {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        padding: 20px;
+    }
+
+    .top h1 {
+        font-size: 24px;
     }
 
     .cards {
         grid-template-columns: 1fr;
     }
 
+    .card,
+    .progress-section,
+    .tasks {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
     .task {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+    }
+
+    .status {
+        align-self: flex-start;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .content {
+        padding: 14px;
+    }
+
+    .top h1 {
+        font-size: 22px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .circle {
+        width: 105px;
+        height: 105px;
+    }
+
+    .circle span {
+        width: 72px;
+        height: 72px;
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 640px) {
+    .sidebar nav {
+        flex-wrap: wrap;
     }
 }
