@@ -37,6 +37,8 @@ $result = $conn->query($sql);
 
     <a href="napredak.html" class="menu-btn">📈 Napredak</a>
 
+    <a href="notifikacije_demo.html" class="menu-btn">🔔 Notifikacije</a>
+
 </div>
 
 <div class="content">
