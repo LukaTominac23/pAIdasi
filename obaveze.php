@@ -96,7 +96,6 @@ $result = $conn->query($sql);
 
     <br>
 
-    <a href="main.html">← Povratak</a>
 
 </div>
 

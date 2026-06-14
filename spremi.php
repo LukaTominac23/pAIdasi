@@ -18,6 +18,10 @@ VALUES
 ('$predmet','$datum','$tezina','$ocjena')";
 
 if ($conn->query($sql) === TRUE) {
+    echo "
+    <h2>Obaveza uspješno dodana!</h2>
+    <p>Preusmjeravanje na popis obaveza...</p>
+    ";
     header("Location: obaveze.php");
     exit;
 } else {
