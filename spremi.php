@@ -17,8 +17,10 @@ $sql = "INSERT INTO obaveze
 VALUES
 ('$predmet','$datum','$tezina','$ocjena')";
 
-$conn->query($sql);
-
-echo "Obaveza spremljena!";
-
+if ($conn->query($sql) === TRUE) {
+    header("Location: obaveze.php");
+    exit;
+} else {
+    echo "Greška: " . $conn->error;
+}
 ?>

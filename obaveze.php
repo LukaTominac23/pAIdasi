@@ -74,7 +74,7 @@ $result = $conn->query($sql);
                 if ($row['status_obaveze'] != 'Odrađeno') {
 
                     echo '<a class="btn"
-                    href="oznaci_odradeno.php?id='
+                    href="oznaci_odrađeno.php?id='
                     . $row['id'] .
                     '">✓ Označi kao odrađeno</a>';
 
