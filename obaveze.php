@@ -20,6 +20,7 @@ $result = $conn->query($sql);
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moje obaveze</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,12 +32,10 @@ $result = $conn->query($sql);
     <nav>
         <a href="main.html" class="menu-btn">Početna</a>
         <a href="dodaj_obavezu.html" class="menu-btn">Dodaj Obavezu</a>
-        <a href="obaveze.php" class="active">Obaveze</a>
+        <a href="obaveze.php" class="active menu-btn">Obaveze</a>
         <a href="napredak_mobile.html" class="menu-btn">Napredak</a>
         <a href="notifikacije_demo.html" class="menu-btn">Notifikacije</a>
     </nav>
-
-    <a href="notifikacije_demo.html" class="menu-btn">🔔 Notifikacije</a>
 
 </div>
 
