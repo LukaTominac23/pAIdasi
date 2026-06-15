@@ -82,7 +82,7 @@ $result = $conn->query($sql);
 
                 echo '</div>';
             }
-
+        //povratna informacija
         } else {
 
             echo '<div class="card">';
