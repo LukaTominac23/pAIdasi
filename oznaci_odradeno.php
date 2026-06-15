@@ -1,5 +1,5 @@
 <?php
-
+//povezivanje s bazom
 $conn = new mysqli(
     "localhost",
     "root",
